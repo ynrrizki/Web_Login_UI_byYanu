@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  margin: 10px;
+  background: white;
+  width: 69vmin;
+  height: 66.5vmin;
+}
+
+.box form {
+  display: flex;
+  flex-direction: column;
+  padding: 37px;
+}
+
+.title {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-size: 4vmin;
+  margin: 0px 0px 5vmin 0px;
+}
+
+.field {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.field input {
+  position: relative;
+  width: 100%;
+  padding: 0px 5px;
+  padding-left: 3em;
+  padding-bottom: 5px;
+  outline: none;
+  border: none;
+  border-bottom: solid 2px silver;
+  font-size: 3vmin;
+  color: #3561d2;
+}
+
+.field label {
+  padding: 0px 5px 0px 10vmin;
+  position: absolute;
+  transform: translateY(-0.2vmin);
+  transition: 0.3s cubic-bezier(0.6, -0.28, 0, 0.87);
+  pointer-events: none;
+  color: silver;
+  font-size: 3vmin;
+}
+
+.field .underline {
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+}
+
+.field .underline::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: scaleX(0);
+  transition: 0.3s ease-in;
+}
+
+.field .horizontal {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: silver;
+  bottom: 0;
+  transform: translateY(-5px);
+  left: 8vmin;
+}
+
+.field .icon {
+  position: absolute;
+  color: silver;
+  width: 7vmin;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.field .icon i {
+  font-size: 5vmin;
+  width: 5vmin;
+}
+
+.field .horizontal::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: scaleX(0);
+  transition: 0.3s ease-in;
+}
+
+.field input:focus ~ .icon,
+.field input:valid ~ .icon {
+  color: #3561d2;
+  transition: 0.3s ease-in;
+}
+.field input:focus ~ .horizontal::before,
+.field input:valid ~ .horizontal::before {
+  background: #3561d2;
+  transform: scaleX(1);
+}
+
+.field input:focus ~ .underline::before,
+.field input:valid ~ .underline::before {
+  background: #3561d2;
+  transform: scaleX(1);
+}
+
+.field input:focus ~ label,
+.field input:valid ~ label {
+  color: #3561d2;
+  transform: translateY(-4.2vmin);
+  font-size: 2.5vmin;
+}
+
+.sized-height {
+  height: 5vmin;
+  width: 100%;
+}
+
+.forgot {
+  margin-top: 4vmin;
+  font-size: 2.3vmin;
+}
+
+.forgot a {
+  text-decoration: none;
+  color: silver;
+}
+
+.forgot a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  margin: 3vmin 0px;
+  align-items: center;
+}
+
+.btn input {
+  width: 100%;
+  height: 7.5vmin;
+  background: #3561d2;
+  color: white;
+  border: none;
+  border-radius: 2vmin;
+  font-size: 2.5vmin;
+  cursor: pointer;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+  transition: 0.1s ease-in;
+}
+
+.btn input:active {
+  border: solid 2px #4d7fff;
+  background: #4d7fff;
+  box-shadow: none;
+}
+
+.btn a {
+  margin-top: 4vmin;
+  text-decoration: none;
+  color: silver;
+  font-size: 2.5vmin;
+}
+.btn a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 461px) {
+  .box {
+    width: 100%;
+    height: 100vh;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
